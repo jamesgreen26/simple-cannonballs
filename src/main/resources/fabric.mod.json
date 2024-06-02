@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "simple-cannonballs",
+	"version": "${version}",
+	"name": "Simple Cannonballs",
+	"description": "My first mod, adding simple cannonballs which can be shot from dispensers",
+	"authors": [
+		"G_Mungus"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/simple-cannonballs/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.g_mungus.simple_cannonballs.SimpleCannonballs"
+		],
+		"client": [
+			"net.g_mungus.simple_cannonballs.SimpleCannonballsClient"
+		],
+		"fabric-datagen": [
+			"net.g_mungus.simple_cannonballs.SimpleCannonballsDataGenerator"
+		]
+	},
+	"mixins": [
+		"simple-cannonballs.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
