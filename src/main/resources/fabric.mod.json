@@ -3,7 +3,7 @@
 	"id": "simple-cannonballs",
 	"version": "${version}",
 	"name": "Simple Cannonballs",
-	"description": "My first mod, adding simple cannonballs which can be shot from dispensers",
+	"description": "Cannonballs, which can be crafted and shot from dispensers.",
 	"authors": [
 		"G_Mungus"
 	],
