@@ -1,0 +1,8 @@
+{
+  "cannonball_shot": {
+    "subtitle": "sounds.simple-cannonballs.cannonball_shot",
+    "sounds": [
+      "simple-cannonballs:cannonball_shot"
+    ]
+  }
+}

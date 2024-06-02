@@ -2,6 +2,11 @@ package net.g_mungus.simple_cannonballs;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.g_mungus.simple_cannonballs.entity.ModEntities;
+import net.g_mungus.simple_cannonballs.item.ModItems;
+import net.g_mungus.simple_cannonballs.sound.ModSounds;
+import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,10 +17,13 @@ public class SimpleCannonballs implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
+		LOGGER.info("Simple Cannons Init");
 
-		LOGGER.info("Hello Fabric world!");
+		EntityRendererRegistry.register(ModEntities.CANNONBALL_ENTITY, (context) ->
+				new FlyingItemEntityRenderer(context));
+
+		ModItems.registerModItems();
+		ModSounds.registerSounds();
+		ModEntities.registerModEntities();
 	}
 }
