@@ -41,7 +41,7 @@ public class CannonballEntity extends ThrownItemEntity implements FlyingItemEnti
     protected void onCollision(HitResult hitResult) {
         super.onCollision(hitResult);
         if (!this.getWorld().isClient) {
-            this.getWorld().createExplosion((Entity)this, this.getX(), this.getY(), this.getZ(), 1, false, World.ExplosionSourceType.BLOCK);
+            this.getWorld().createExplosion((Entity)this, this.getX(), this.getY(), this.getZ(), 2, false, World.ExplosionSourceType.BLOCK);
             this.discard();
         }
     }
