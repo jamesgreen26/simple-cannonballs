@@ -19,11 +19,10 @@ public class SimpleCannonballs implements ModInitializer {
 	public void onInitialize() {
 		LOGGER.info("Simple Cannons Init");
 
-		EntityRendererRegistry.register(ModEntities.CANNONBALL_ENTITY, (context) ->
-				new FlyingItemEntityRenderer(context));
-
 		ModItems.registerModItems();
 		ModSounds.registerSounds();
 		ModEntities.registerModEntities();
+
+
 	}
 }
