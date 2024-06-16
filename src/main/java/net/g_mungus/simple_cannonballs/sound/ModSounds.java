@@ -10,7 +10,7 @@ public class ModSounds {
     public static SoundEvent CANNONBALL_SHOT = registerSoundEvent("cannonball_shot");
 
     private static SoundEvent registerSoundEvent(String name) {
-        Identifier id = new Identifier(SimpleCannonballs.MOD_ID, name);
+        Identifier id = Identifier.of(SimpleCannonballs.MOD_ID, name);
         return Registry.register(Registries.SOUND_EVENT, id, SoundEvent.of(id));
     }
 

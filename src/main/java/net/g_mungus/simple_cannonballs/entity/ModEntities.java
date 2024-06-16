@@ -12,7 +12,7 @@ import net.minecraft.util.Identifier;
 public class ModEntities {
     public static final EntityType<CannonballEntity> CANNONBALL_ENTITY = Registry.register(
             Registries.ENTITY_TYPE,
-            new Identifier(SimpleCannonballs.MOD_ID, "cannonball_entity"),
+            Identifier.of(SimpleCannonballs.MOD_ID, "cannonball_entity"),
             FabricEntityTypeBuilder.<CannonballEntity>create(SpawnGroup.MISC, CannonballEntity::new)
                     .dimensions(EntityDimensions.fixed(0.25f, 0.25f))
                     .trackRangeBlocks(4)

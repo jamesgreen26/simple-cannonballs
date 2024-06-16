@@ -23,9 +23,9 @@ public abstract class CannonDispenserBehavior
         extends ItemDispenserBehavior {
     @Override
     public ItemStack dispenseSilently(BlockPointer pointer, ItemStack stack) {
-        ServerWorld world = pointer.getWorld();
+        ServerWorld world = pointer.world();
         Position position = DispenserBlock.getOutputLocation(pointer);
-        Direction direction = pointer.getBlockState().get(DispenserBlock.FACING);
+        Direction direction = pointer.state().get(DispenserBlock.FACING);
         ProjectileEntity projectileEntity = this.createProjectile(world, position, stack);
         projectileEntity.setVelocity(direction.getOffsetX(), (float)direction.getOffsetY() + 0.2f, direction.getOffsetZ(), this.getForce() + 0.4f, this.getVariation() / 2);
         world.spawnEntity(projectileEntity);
@@ -35,18 +35,10 @@ public abstract class CannonDispenserBehavior
 
     @Override
     protected void playSound(BlockPointer pointer) {
-        pointer.getWorld().playSound(null, pointer.getPos().getX(), pointer.getPos().getY(), pointer.getPos().getZ(), ModSounds.CANNONBALL_SHOT, SoundCategory.BLOCKS, 0.5F, 1F);
+        pointer.world().playSound(null, pointer.pos().getX(), pointer.pos().getY(), pointer.pos().getZ(), ModSounds.CANNONBALL_SHOT, SoundCategory.BLOCKS, 0.5F, 1F);
     }
 
-    /**
-     * Creates the entity that will be spawned in front of the dispenser.
-     *
-     * @return the created projectile
-     *
-     * @param world the world the projectile will spawn in
-     * @param stack the stack that the dispenser will consume
-     * @param position the output location of the dispenser
-     */
+
     protected abstract ProjectileEntity createProjectile(World var1, Position var2, ItemStack var3);
 
     /**

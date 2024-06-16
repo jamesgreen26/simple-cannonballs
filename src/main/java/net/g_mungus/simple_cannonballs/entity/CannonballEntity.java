@@ -53,7 +53,7 @@ public class CannonballEntity extends ThrownItemEntity implements FlyingItemEnti
         entity.damage(this.getDamageSources().explosion(null), 6.0f);
     }
 
-    public Packet<ClientPlayPacketListener> createSpawnPacket() {
-        return new EntitySpawnS2CPacket(this);
-    }
+//    public Packet<ClientPlayPacketListener> createSpawnPacket() {
+//        return new EntitySpawnS2CPacket(this);
+//    }
 }

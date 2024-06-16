@@ -1,6 +1,5 @@
 package net.g_mungus.simple_cannonballs.item;
 
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.g_mungus.simple_cannonballs.SimpleCannonballs;
@@ -23,14 +22,14 @@ import net.minecraft.world.World;
 
 public class ModItems {
 
-    public static final Item CANNONBALL = registerItem("cannonball", new CannonballItem(new FabricItemSettings()));
+    public static final Item CANNONBALL = registerItem("cannonball", new CannonballItem(new Item.Settings()));
 
     private static void addItemsToCombatItemGroup(FabricItemGroupEntries entries) {
         entries.add(CANNONBALL);
     }
 
     private static Item registerItem(String name, Item item) {
-        return Registry.register(Registries.ITEM, new Identifier(SimpleCannonballs.MOD_ID, name), item);
+        return Registry.register(Registries.ITEM, Identifier.of(SimpleCannonballs.MOD_ID, name), item);
     }
 
     public static void registerModItems () {
